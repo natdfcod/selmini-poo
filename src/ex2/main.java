@@ -14,7 +14,7 @@ public class main {
         System.out.println("Digite sua idade");
         idade = sc.nextInt();
 
-        //instanciando
+        //instanciando p1
         Paciente p1 = new Paciente(nome, idade);
         //jogando o vetor ja
         double[] intervalo = p1.calcularAlvo();
