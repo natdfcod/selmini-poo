@@ -20,9 +20,11 @@ public class BilheteUnico {
 
     public void carregar(double valor){
         if (valor <= 0){
+            System.out.println("Valor incorreto");
             return;
         }
         this.saldo += valor;
+        System.out.print("Valor carregado com sucesso!");
     }
     public void catraca(){
         double valorDebito;
@@ -38,5 +40,9 @@ public class BilheteUnico {
         } else {
             System.out.printf("Saldo insuficiente: %.2f\n", this.saldo);
         }
+    }
+
+    public double getSaldo() {
+        return saldo;
     }
 }
