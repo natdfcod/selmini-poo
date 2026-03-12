@@ -15,19 +15,15 @@ public class MonitorEnergia {
     }
 
     public double calcularMedia(){
-        double soma = 0;
-        for (int i = 0; i < cont; i++) {
-            soma += consumo[i];
-        }
-        return soma/cont;
+        return calcularMedia(1, cont);
     }
 
     public double calcularMedia(int inicio, int termino){
         double soma = 0;
-        for (int i = inicio-1; i < termino-1; i++) {
+        for (int i = inicio-1; i < termino; i++) {
             soma += consumo[i];
 
         }
-        return soma/(termino-inicio);
+        return soma/(termino-inicio)+1;
     }
 }
