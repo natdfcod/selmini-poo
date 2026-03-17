@@ -1,6 +1,5 @@
 package ex6;
 
-import java.io.StringReader;
 import java.util.Random;
 
 public class BilheteUnico {
