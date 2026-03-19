@@ -32,7 +32,7 @@ public class BilheteUnico {
             valorDebito /= 2;
         }
         //verificação de saldo
-        if (saldo <= valorDebito){
+        if (saldo >= valorDebito){
             saldo -= valorDebito;
             return true;
         }

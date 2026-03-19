@@ -17,16 +17,49 @@ public class Main {
                 [5] Finalizar:""");
         opcao = sc.nextInt();
         switch (opcao){
-            case 1:
-                cadastrar();
-                break;
-            case 2:
-
+            case 1 -> cadastrar();
+            case 2 -> carregar();
+            case 3 -> consultarSaldo();
+            case 4 -> passarCatraca();
+            case 5 -> System.out.println("Até breve!!");
+            default -> System.out.println("Opção infvalida!");
         }
+            System.out.println("\n#######################################");
        }while (opcao != 5);
 
 
     }
+
+    private static void passarCatraca() {
+        BilheteUnico bilheteUnico = pesquisar();
+        if (bilheteUnico != null){
+            if (bilheteUnico.catraca()){
+                System.out.println("Passou na catraca!");
+            } else {
+            System.out.println("Saldo insuficiente!");
+            }
+            System.out.printf("Seu saldo atual é de R$ %.2f",bilheteUnico.getSaldo());
+        }
+    }
+
+    private static void consultarSaldo() {
+        BilheteUnico bilheteUnico = pesquisar();
+        if (bilheteUnico != null){
+            System.out.printf("Seu saldo atual é de R$ %.2f",bilheteUnico.getSaldo());
+        }
+    }
+
+    private static void carregar() {
+        double valor;
+        BilheteUnico bilheteUnico = pesquisar();
+        if (bilheteUnico != null){
+            System.out.print("Quanto deseja carregar? ->");
+            valor = sc.nextDouble();
+            bilheteUnico.carregar(valor);
+        }
+
+    }
+
     public static void cadastrar(){
 
         if (index < bilhete.length){
@@ -44,7 +77,7 @@ public class Main {
     }
     public static BilheteUnico pesquisar(){
         long cpf;
-        System.out.print("Qual CPF qur buscar?");
+        System.out.print("Qual CPF qur buscar? -> ");
         cpf = sc.nextLong();
         for (int i = 0; i < index; i++) {
             if (bilhete[i].usuario.cpf == cpf){
