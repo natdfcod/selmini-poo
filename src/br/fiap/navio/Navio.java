@@ -8,14 +8,24 @@ public class Navio {
     private Carga [] carga;
 
     public Navio() {
-        this.capacidade = 10.000;
+        this.capacidade = 10000;
         this.index = 0;
         this.carga = new Carga[20];
     }
+    public String getDados(){
+        String aux = "";
+        for (int i = 0; i < index; i++) {
+            aux += carga[i].getDados();
+            aux += "---------------------\n";
+        }
+        return aux;
+    }
     public boolean reservar(Carga carga){
-        if (permitirReservar(carga.getPeso())){
-            this.carga[index++] = carga;
-            return true;
+        if(index < this.carga.length) {
+            if (permitirReservar(carga.getPeso())) {
+                this.carga[index++] = carga;
+                return true;
+            }
         }
         return false;
     }
@@ -25,7 +35,7 @@ public class Navio {
         for (int i = 0; i < index; i++) {
             total += carga[i].getPeso();
         }
-        return (total + peso) <= capacidade && index <= this.carga.length;
+        return (total + peso) <= capacidade;
     }
 
 }
