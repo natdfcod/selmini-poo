@@ -12,4 +12,14 @@ public class EmpregadoHorista extends Empregado {
     public double calcularSalario(){
         return horasTrabalhadas * valorDaHora;
     }
+
+    @Override
+    public String toString() {
+        return "EmpregadoHorista{" +
+                "nome='" + nome + '\'' +
+                ", matricula=" + matricula +
+                ", valorDaHora=" + valorDaHora +
+                ", horasTrabalhadas=" + horasTrabalhadas +
+                '}';
+    }
 }
