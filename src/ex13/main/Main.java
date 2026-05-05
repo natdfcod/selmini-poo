@@ -12,8 +12,8 @@ public class Main {
         ArrayList<Conta> lista = new ArrayList<>();
         double valor = 0;
 
-        lista.add(new ContaCorrente(1, 1000, 2000));
-        lista.add(new ContaPoupanca(2, 500, 10));
+        lista.add(new ContaCorrente(1, 10000, 2000));
+        lista.add(new ContaPoupanca(2, 5000, 10));
 
         for (Conta conta : lista){
             conta.depositar(2000);
