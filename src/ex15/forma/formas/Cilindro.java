@@ -1,16 +1,21 @@
-package ex15;
+package ex15.forma.formas;
 
-public class Cilindro extends Circulo{
+import ex15.forma.Forma;
+import ex15.ponto.Ponto;
+import ex15.volume.Volume;
+
+public class Cilindro extends Forma implements Volume {
     private double raio;
     private double altura;
     private Ponto ponto;
 
     public Cilindro(double raio, double altura, Ponto ponto) {
-        super(raio, ponto);
+        this.raio = raio;
         this.altura = altura;
+        this.ponto = ponto;
     }
 
-    public double calcularAreaTotal(){
+    public double calcularArea(){
         return 2*Math.PI*raio*(raio+altura);
     }
 
@@ -20,11 +25,11 @@ public class Cilindro extends Circulo{
 
     @Override
     public String toString() {
-        return "Cilindro{" +
-                "raio=" + raio +
-                ", altura=" + altura +
-                ", ponto=" + ponto +
-                '}';
+        String aux = "";
+        aux += "Raio: " + raio + "\n";
+        aux += "Altura: " + altura + "\n";
+        aux += ponto.toString();
+        return aux;
     }
 
     public double getRaio() {

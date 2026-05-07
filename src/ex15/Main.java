@@ -1,29 +1,34 @@
 package ex15;
 
-import java.util.ArrayList;
+import ex15.forma.Forma;
+import ex15.forma.formas.Cilindro;
+import ex15.forma.formas.Circulo;
+import ex15.ponto.Ponto;
+import ex15.volume.Volume;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Circulo> circulos = new ArrayList<>();
-        ArrayList<Cilindro> cilindros = new ArrayList<>();
+        List<Forma> lista = new LinkedList<>();
+        lista.add(new Circulo(2, new Ponto(2, 2)));
+        lista.add(new Cilindro(3, 3, new Ponto(3,3)));
+        lista.add(new Circulo(2, new Ponto(2, 2)));
+        lista.add(new Cilindro(3, 3, new Ponto(3,3)));
 
-        circulos.add(new Circulo(5,new Ponto(0, 0)));
-        circulos.add(new Circulo(1.5,new Ponto(2, 3)));
-        circulos.add(new Circulo(10,new Ponto(-4, 7)));
+        imprimir(lista);
+    }
 
-        cilindros.add(new Cilindro(5, 10, new Ponto(0,0)));
-        cilindros.add(new Cilindro(3, 7.5, new Ponto(1,1)));
-        cilindros.add(new Cilindro(8, 2, new Ponto(2,-3)));
+    private static void imprimir(List<Forma> lista) {
+        for (Forma item : lista){
+            System.out.println(item);
+            System.out.printf("Área: %.1f\n",item.calcularArea());
+            if (item instanceof Volume){
+                System.out.printf("Volume: %.1f", ((Volume) item).calcularVolume());
+            }
+            System.out.println();
 
-        //saida
-        System.out.println("Circulos:");
-        for(Circulo circulo : circulos){
-            System.out.printf("Área: %.2f\n",circulo.calcularAreaBase());
-        }
-        System.out.println("******************************");
-        System.out.println("Cilindros:");
-        for (Cilindro cilindro : cilindros){
-            System.out.printf("\nÁrea base: %.2f\nÁrea total: %.2f\nVolume: %.2f", cilindro.calcularAreaBase(), cilindro.calcularAreaTotal(), cilindro.calcularVolume());
         }
     }
 }

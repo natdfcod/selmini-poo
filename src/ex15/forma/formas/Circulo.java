@@ -1,6 +1,9 @@
-package ex15;
+package ex15.forma.formas;
 
-public class Circulo {
+import ex15.forma.Forma;
+import ex15.ponto.Ponto;
+
+public class Circulo extends Forma {
     private double raio;
     private Ponto ponto;
 
@@ -9,16 +12,16 @@ public class Circulo {
         this.ponto = ponto;
     }
 
-    public double calcularAreaBase(){
+    public double calcularArea(){
         return Math.PI*raio*raio;
     }
 
     @Override
     public String toString() {
-        return "Circulo{" +
-                "raio=" + raio +
-                ", ponto=" + ponto +
-                '}';
+        String aux = "";
+        aux += "Raio: " + raio + "\n";
+        aux += ponto.toString();
+        return aux;
     }
 
     public double getRaio() {
