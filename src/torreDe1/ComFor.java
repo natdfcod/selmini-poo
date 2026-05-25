@@ -2,7 +2,7 @@ package torreDe1;
 
 public class ComFor {
     public static String[] lista = new String[]{" "," "," "," "," "," "," "," "," "," " };
-    static void main() {
+    public static void main(String[] args) {
         imprimir("1");
     }
 
