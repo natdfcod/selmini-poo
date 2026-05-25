@@ -75,6 +75,7 @@ public class Main {
             System.out.println("Erro ao gerar o bilhete! Procure um posto de atendimento ");
         }
     }
+
     public static BilheteUnico pesquisar(){
         long cpf;
         System.out.print("Qual CPF qur buscar? -> ");
