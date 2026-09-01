@@ -59,7 +59,7 @@ public class Util {
             }
             switch (opcao){
                 PetShop petShop = new PetShop();
-                case 1 -> petShop.inserir(new Atendimento(new Cachorro(nome, peso), new Servico()) );
+                case 1 -> petShop.inserir(new Atendimento(new Cachorro(nome, peso), new Servico()));
             }
         } while (opcao != 4);
 
