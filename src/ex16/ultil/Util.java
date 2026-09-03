@@ -57,10 +57,7 @@ public class Util {
                 nome = showInputDialog("Nome do pet:");
                 peso = parseInt(showInputDialog("Peso do pet:"));
             }
-            switch (opcao){
-                PetShop petShop = new PetShop();
-                case 1 -> petShop.inserir(new Atendimento(new Cachorro(nome, peso), new Servico()));
-            }
+
         } while (opcao != 4);
 
     }
