@@ -20,7 +20,7 @@ public class main {
         lista.add(new Candidato("Selmini", 10,10));
 
         //ordenar
-        lista.sort(Comparator.comparingDouble(Candidato::getNotaTecnica).reversed().thenComparingInt(Candidato::getAnoExperiencia).reversed().thenComparing(Candidato::getNome));
+        lista.sort(Comparator.comparingDouble(Candidato::getNotaTecnica).thenComparingInt(Candidato::getAnoExperiencia).thenComparing(Candidato::getNome).reversed());
 
         //printar
         lista.forEach(canditato -> {
