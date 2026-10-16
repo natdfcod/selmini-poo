@@ -1,4 +1,4 @@
-package ex17;
+package collections._ex17;
 
 import java.util.HashSet;
 import java.util.Set;

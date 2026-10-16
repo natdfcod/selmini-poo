@@ -1,4 +1,4 @@
-package ex18;
+package collections._ex17;
 
 import java.util.Objects;
 

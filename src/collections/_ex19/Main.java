@@ -1,6 +1,4 @@
-package ex19;
-
-import ex18.Aluno;
+package collections._ex19;
 
 import java.util.HashMap;
 import java.util.Map;
